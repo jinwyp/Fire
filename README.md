@@ -1,5 +1,7 @@
 Shadowsocks Manyuser 控制面板
 
+Demo：https://fire.qiyichao.cn
+
 依赖 PDO MySQL。
 
  1. 导入 fire.sql，配置 library/medoo.php
