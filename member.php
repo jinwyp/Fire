@@ -108,6 +108,8 @@ if (isset($_GET['action'])) {
 
 						header('Location: member.php?action=home');
 						unset($message);
+					} else {
+						$message[] = '验证密码失败';
 					}
 				}
 			}
@@ -468,7 +470,7 @@ if (isset($_GET['action'])) {
 		if ($token) {
 			if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['tradeno'])) {
 				$tradeno = urlencode($_POST['tradeno']);
-				$data = json_decode(file_get_contents('http://pay.qiyichao.cn/api/pay.php?application=YOUR_APPLICATION_ID&apikey=Your_APIKEY&method=check_order&update=1&tradeNo='.$tradeno), true);
+				$data = json_decode(file_get_contents('http://pay.qiyichao.cn/api/pay.php?application=2&apikey=W6sz7qFxcfoYdCoAf03PDqptWhBVUZCPrcgIzPb5wv8avfrx3vJFlHT09MMAoZF9&method=check_order&update=1&tradeNo='.$tradeno), true);
 				if (isset($data['error'])) {
 					// 表明正确获取
 					if (!$data['error']) {
